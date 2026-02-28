@@ -4,8 +4,8 @@ from cryptography.fernet import Fernet
 SECRET_KEY = b'aVuzD_TMheAHemOnvrBvkh8f4A3--rTBuf8ERiTV0nk='
 
 # Your credentials
-BOT_TOKEN = '6143948708:AAFDFjnbEQGUH4gO_93miWUrotF3T2iNIpg'
-CHAT_ID = '1701588872'
+BOT_TOKEN = ''
+CHAT_ID = ''
 
 f = Fernet(SECRET_KEY)
 encrypted_bot_token = f.encrypt(BOT_TOKEN.encode('utf-8'))
