@@ -1,0 +1,368 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 1997 >>
+stream
+BT
+/F1 14 Tf
+1 0 0 1 50 780 Tm
+(TELEGRAM-BASED ENDPOINT MONITORING AND REMOTE ADMINISTRATION FRAMEWORK) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 740 Tm
+(Institutional Research Paper Format) Tj
+0 -14 Td
+(Student: [Your Name]   Register No.: [Your Number]) Tj
+0 -14 Td
+(Department: [Dept]   Institution: [Institution]) Tj
+0 -14 Td
+(Guide: [Guide Name]   Academic Year: [YYYY-YYYY]) Tj
+ET
+BT
+/F1 14 Tf
+1 0 0 1 50 650 Tm
+(Abstract) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 626 Tm
+(This paper presents a Telegram-based endpoint monitoring framework designed for controlled) Tj
+0 -14 Td
+(cybersecurity research. The system supports telemetry collection, remote command) Tj
+0 -14 Td
+(execution, multi-device routing, and defensive analysis. Key modules include keystroke and) Tj
+0 -14 Td
+(clipboard capture, system profiling, screenshot/webcam acquisition, shell control, Wi-Fi) Tj
+0 -14 Td
+(profile enumeration, and file retrieval. Evaluation in a lab environment indicates) Tj
+0 -14 Td
+(responsive text-based command handling and predictable media-transfer delay. The project) Tj
+0 -14 Td
+(is documented with strict ethical guidance and blue-team mitigation recommendations.) Tj
+ET
+BT
+/F1 14 Tf
+1 0 0 1 50 456 Tm
+(1. Introduction) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 432 Tm
+(Trusted messaging APIs can be abused as command channels because traffic appears) Tj
+0 -14 Td
+(legitimate. This work builds a realistic final-year prototype to study both offensive) Tj
+0 -14 Td
+(workflows and defensive detection points. Objectives include modular design, multi-) Tj
+0 -14 Td
+(endpoint control, performance evaluation, and institutional compliance.) Tj
+ET
+BT
+/F1 14 Tf
+1 0 0 1 50 342 Tm
+(2. Literature Context) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 318 Tm
+(Prior studies and ATT&CK mappings show recurring phases: deployment, persistence,) Tj
+0 -14 Td
+(collection, execution, and exfiltration. Telegram APIs reduce setup complexity and support) Tj
+0 -14 Td
+(command plus file response channels, making them suitable for lab-scale emulation.) Tj
+ET
+endstream
+endobj
+3 0 obj
+<< /Length 1387 >>
+stream
+BT
+/F1 14 Tf
+1 0 0 1 50 780 Tm
+(3. Proposed System Architecture) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 756 Tm
+(The framework follows an Operator -> Telegram API -> Endpoint Agent model. The agent) Tj
+0 -14 Td
+(contains modular collectors and handlers. Figure 1 provides the architecture diagram in) Tj
+0 -14 Td
+(renderable diagram format.) Tj
+ET
+0.2 w
+60 600 120 35 re S
+BT /F1 9 Tf
+1 0 0 1 65 614.5 Tm (Operator \(Telegram\)) Tj ET
+240 600 140 35 re S
+BT /F1 9 Tf
+1 0 0 1 245 614.5 Tm (Telegram Bot API) Tj ET
+420 600 130 35 re S
+BT /F1 9 Tf
+1 0 0 1 425 614.5 Tm (Endpoint Agent) Tj ET
+180 618 m 240 618 l S
+380 612 m 420 612 l S
+420 624 m 380 624 l S
+420 550 120 16 re S
+BT /F1 9 Tf
+1 0 0 1 425 555.0 Tm (Keylogger) Tj ET
+485 600 m 480 566 l S
+420 530 120 16 re S
+BT /F1 9 Tf
+1 0 0 1 425 535.0 Tm (Clipboard) Tj ET
+485 600 m 480 546 l S
+420 510 120 16 re S
+BT /F1 9 Tf
+1 0 0 1 425 515.0 Tm (SysInfo) Tj ET
+485 600 m 480 526 l S
+420 490 120 16 re S
+BT /F1 9 Tf
+1 0 0 1 425 495.0 Tm (Screen/Webcam) Tj ET
+485 600 m 480 506 l S
+420 470 120 16 re S
+BT /F1 9 Tf
+1 0 0 1 425 475.0 Tm (Shell) Tj ET
+485 600 m 480 486 l S
+420 450 120 16 re S
+BT /F1 9 Tf
+1 0 0 1 425 455.0 Tm (Wi-Fi) Tj ET
+485 600 m 480 466 l S
+420 430 120 16 re S
+BT /F1 9 Tf
+1 0 0 1 425 435.0 Tm (File Retrieval) Tj ET
+485 600 m 480 446 l S
+BT
+/F1 11 Tf
+1 0 0 1 50 120 Tm
+(Figure 1: High-level architecture and module mapping.) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Length 1247 >>
+stream
+BT
+/F1 14 Tf
+1 0 0 1 50 780 Tm
+(4. Implementation and Command Workflow) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 756 Tm
+(Implementation uses Python modules for runtime control, command parsing, collection tasks,) Tj
+0 -14 Td
+(and response upload. Device IDs allow one operator chat to manage multiple endpoints) Tj
+0 -14 Td
+(safely in a lab.) Tj
+ET
+0.3 w
+60 560 m 60 340 l S
+BT /F1 9 Tf
+1 0 0 1 40 570 Tm (Operator) Tj ET
+190 560 m 190 340 l S
+BT /F1 9 Tf
+1 0 0 1 170 570 Tm (Telegram API) Tj ET
+320 560 m 320 340 l S
+BT /F1 9 Tf
+1 0 0 1 300 570 Tm (Agent) Tj ET
+450 560 m 450 340 l S
+BT /F1 9 Tf
+1 0 0 1 430 570 Tm (Handler) Tj ET
+60 540 m 190 540 l S
+BT /F1 8 Tf
+1 0 0 1 105.0 544 Tm (/cmd DEVICE ipconfig) Tj ET
+190 510 m 320 510 l S
+BT /F1 8 Tf
+1 0 0 1 235.0 514 Tm (update payload) Tj ET
+320 480 m 320 479 l S
+BT /F1 8 Tf
+1 0 0 1 300.0 484 Tm (validate target) Tj ET
+320 450 m 450 450 l S
+BT /F1 8 Tf
+1 0 0 1 365.0 454 Tm (execute command) Tj ET
+450 420 m 320 420 l S
+BT /F1 8 Tf
+1 0 0 1 365.0 424 Tm (stdout/stderr) Tj ET
+320 390 m 190 390 l S
+BT /F1 8 Tf
+1 0 0 1 235.0 394 Tm (send response) Tj ET
+190 360 m 60 360 l S
+BT /F1 8 Tf
+1 0 0 1 105.0 364 Tm (deliver output) Tj ET
+BT
+/F1 11 Tf
+1 0 0 1 50 90 Tm
+(Figure 2: Command-processing sequence.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Length 1725 >>
+stream
+BT
+/F1 14 Tf
+1 0 0 1 50 780 Tm
+(5. Evaluation) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 756 Tm
+(Evaluation criteria: command latency, success rate, media transfer practicality, and host) Tj
+0 -14 Td
+(resource footprint. Text commands generally return quickly; media commands take longer due) Tj
+0 -14 Td
+(to capture and upload overhead. Observed limits include network outages, webcam permission) Tj
+0 -14 Td
+(failures, and payload size constraints.) Tj
+ET
+BT
+/F1 14 Tf
+1 0 0 1 50 646 Tm
+(6. Security Analysis and Defensive Insights) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 622 Tm
+(The prototype maps to common ATT&CK behaviors and is valuable for defender training.) Tj
+0 -14 Td
+(Recommended controls include startup-change alerts, behavioral EDR rules, process lineage) Tj
+0 -14 Td
+(monitoring, and egress policy restrictions for unauthorized Telegram traffic.) Tj
+ET
+0.3 w
+80 520 70 24 re S
+BT /F1 8 Tf
+1 0 0 1 84 528 Tm (Initial Access) Tj ET
+150 532 m 160 532 l S
+160 520 70 24 re S
+BT /F1 8 Tf
+1 0 0 1 164 528 Tm (Deployment) Tj ET
+230 532 m 240 532 l S
+240 520 70 24 re S
+BT /F1 8 Tf
+1 0 0 1 244 528 Tm (Persistence) Tj ET
+310 532 m 320 532 l S
+320 520 70 24 re S
+BT /F1 8 Tf
+1 0 0 1 324 528 Tm (Collection) Tj ET
+390 532 m 400 532 l S
+400 520 70 24 re S
+BT /F1 8 Tf
+1 0 0 1 404 528 Tm (Execution) Tj ET
+470 532 m 480 532 l S
+480 520 70 24 re S
+BT /F1 8 Tf
+1 0 0 1 484 528 Tm (Exfiltration) Tj ET
+220 460 220 28 re S
+BT /F1 9 Tf
+1 0 0 1 230 477 Tm (Defensive Controls: EDR, App Control, Egress Policy) Tj ET
+330 488 m 115 520 l S
+330 488 m 195 520 l S
+330 488 m 275 520 l S
+330 488 m 355 520 l S
+330 488 m 435 520 l S
+330 488 m 515 520 l S
+BT
+/F1 11 Tf
+1 0 0 1 50 110 Tm
+(Figure 3: Risk lifecycle with defensive interception points.) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 1086 >>
+stream
+BT
+/F1 14 Tf
+1 0 0 1 50 780 Tm
+(7. Ethical and Institutional Compliance) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 756 Tm
+(This research must be executed only in authorized environments with written consent,) Tj
+0 -14 Td
+(faculty supervision, and non-sensitive data. All artifacts should be securely archived or) Tj
+0 -14 Td
+(deleted after assessment.) Tj
+ET
+BT
+/F1 14 Tf
+1 0 0 1 50 666 Tm
+(8. Conclusion and Future Work) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 642 Tm
+(The project demonstrates a complete, multi-module endpoint monitoring framework suitable) Tj
+0 -14 Td
+(for cybersecurity education and adversary emulation. Future work: stronger key management,) Tj
+0 -14 Td
+(cross-platform agent support, safer opt-in execution, and automated blue-team analytics) Tj
+0 -14 Td
+(dashboards.) Tj
+ET
+BT
+/F1 14 Tf
+1 0 0 1 50 542 Tm
+(References) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 50 518 Tm
+([1] MITRE ATT&CK Enterprise Matrix.) Tj
+0 -14 Td
+([2] Telegram Bot API Documentation.) Tj
+0 -14 Td
+([3] NIST SP 800-53.) Tj
+0 -14 Td
+([4] Microsoft Windows Security Baselines.) Tj
+0 -14 Td
+([5] OWASP Logging Cheat Sheet.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Pages /Kids [8 0 R 9 0 R 10 0 R 11 0 R 12 0 R] /Count 5 >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 7 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 2 0 R >>
+endobj
+9 0 obj
+<< /Type /Page /Parent 7 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 3 0 R >>
+endobj
+10 0 obj
+<< /Type /Page /Parent 7 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 4 0 R >>
+endobj
+11 0 obj
+<< /Type /Page /Parent 7 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 5 0 R >>
+endobj
+12 0 obj
+<< /Type /Page /Parent 7 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 6 0 R >>
+endobj
+13 0 obj
+<< /Type /Catalog /Pages 7 0 R >>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000002128 00000 n 
+0000003567 00000 n 
+0000004866 00000 n 
+0000006643 00000 n 
+0000007781 00000 n 
+0000007865 00000 n 
+0000007991 00000 n 
+0000008117 00000 n 
+0000008244 00000 n 
+0000008371 00000 n 
+0000008498 00000 n 
+trailer
+<< /Size 14 /Root 13 0 R >>
+startxref
+8548
+%%EOF
